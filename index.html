@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox Captstone Project</title>
+    <script src="https://kit.fontawesome.com/8509db31be.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+
+<style>
+    body{
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+.navbar {
+    background-color:#013334;
+}
+
+.navbar div{
+    display: none;
+}
+
+.navbar .toggle,
+.navbar .brand {
+    display: inline-block;
+}
+
+.navbar .link {
+    display: block;
+    text-align:center;
+    padding: 1em;
+    text-decoration: none;
+    background: #013334;
+    color:white;
+}
+
+.navbar .link:hover,
+.navbar .link:active {
+    color: #013334;
+    background: white;
+}
+
+.navbar .brand {
+    width: 10em;
+    text-align:center;
+    padding:1em;
+    color: white;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar .toggle {
+    padding: 1em;
+    color: #C8CCCC
+}
+
+@media (min-width: 48em) {
+    .navbar {
+        display: flex;
+    }
+
+    .navbar .nav-left,
+    .navbar .nav-right {
+        display: flex;
+        flex: 1;
+    }
+
+    .navbar .link {
+        width: auto;
+    }
+
+    .navbar .nav-right {
+        justify-content: flex-end;
+    }
+
+    .navbar .toggle {
+        display:none;
+    }
+
+}
+
+
+@media (max-width: 48em) {
+   .navbar.active.toggle {
+       background: #001e1e;
+       color:white;
+   }
+
+   .navbar .brand {
+       text-align: left;
+   }
+
+   .navbar.active div{
+       display: block;
+   }
+}
+</style>
+
+</head>
+<body>
+   <div class="navbar">
+
+       
+            <a href="#" class="toggle" id="navHamburger">
+                    <i class="fas fa-bars"></i>
+
+            <a href="#" class="brand">Lets Navigate</a>
+    
+
+       <div class="nav-left">
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+       </div>
+
+       <div class="nav-right">
+            <a href="#" class="link">Link 3</a>
+       </div>
+
+   </div>
+</body>
+
+    <script>
+        const navHamburger = document.querySelector('#navHamburger');
+        navHamburger.addEventListener('click', (e) => {
+            navHamburger.parentElement.classList.toggle('active');
+        })
+    </script>
+</html>
